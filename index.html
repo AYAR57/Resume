@@ -75,307 +75,606 @@
     <div class="container-fluid bg-light my-6 mt-0" id="home">
         <div class="container">
             <div class="row g-5 align-items-center">
-                <div class="col-lg-6 py-6 pb-0 pt-lg-0">
-                    <h3 class="text-primary mb-3">I'm</h3>
-                    <h1 class="display-3 mb-3">Ahir Suresh</h1>
-                    <h2 class="typed-text-output d-inline"></h2>
-                    <div class="typed-text d-none">Application Developer, Python Programmer, Data Analyst, Proficient in Excel, Web Designer, AI Practitioner</div>
-                    <div class="d-flex align-items-center pt-5">
-                        <a href="" class="btn btn-primary py-3 px-4 me-5">Download CV</a>
-                        <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5>
+                <!-- Left Column (Text and Buttons) -->
+                <div class="col-lg-6 py-6 pb-0 pt-lg-0 text-center text-lg-start">
+                    <h3 class="text-primary mb-3 animated fadeIn">I'm</h3>
+                    <h1 class="display-3 mb-3 animated fadeIn delay-1s">Ahir Suresh</h1>
+                    <h2 class="typed-text-output d-inline animated fadeIn delay-2s"></h2>
+                    <div class="typed-text d-none">
+                        Application Developer, Python Programmer, Data Analyst, Proficient in Excel, Web Designer, AI Practitioner
+                    </div>
+                    <div class="d-flex flex-column flex-sm-row align-items-center pt-5">
+                        <!-- Download CV Button -->
+                        <a href="#" class="btn btn-primary py-3 px-4 mb-3 mb-sm-0 shadow-lg hover-zoom w-75 w-sm-auto">Download CV</a>
+                        <!-- Play Video Button -->
+                      
+                        <h5 class="ms-4 mb-0 d-none d-sm-block"></h5>
                     </div>
                 </div>
+    
+                <!-- Right Column (Profile Image) -->
                 <div class="col-lg-6">
-                    <img class="img-fluid" src="img/profile.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
-
-
-    <!-- Video Modal Start -->
-    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                            allow="autoplay"></iframe>
+                    <div class="img-container d-flex justify-content-center">
+                        <img class="img-fluid profile-img shadow-lg border-radius-50 hover-zoom" src="img/profile.jpg" alt="Profile Image">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Video Modal End -->
+    
+   
+   
+    
+    <!-- CSS Styles -->
+    <style>
+        .fadeIn {
+            animation: fadeIn 2s ease-out;
+        }
+        .fadeIn.delay-1s {
+            animation-delay: 1s;
+        }
+        .fadeIn.delay-2s {
+            animation-delay: 2s;
+        }
+    
+        /* Button hover zoom effect */
+        .hover-zoom:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+    
+        /* Image hover zoom effect */
+        .hover-zoom {
+            transition: transform 0.3s ease-in-out;
+        }
+        .hover-zoom:hover {
+            transform: scale(1.05);
+        }
+    
+        /* Profile Image Styling */
+        .profile-img {
+            border-radius: 50%;
+            transition: transform 0.3s ease-in-out;
+        }
+    
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+    
+        /* Center image */
+        .img-container {
+            display: flex;
+            justify-content: center;
+        }
+    
+        /* Custom animation for fade-in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .text-primary {
+                font-size: 1.5rem;
+            }
+    
+            .display-3 {
+                font-size: 2.5rem;
+            }
+    
+            .typed-text-output {
+                font-size: 1.2rem;
+            }
+    
+            .btn-play {
+                font-size: 1.2rem;
+                padding: 15px;
+            }
+    
+            .btn-primary {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+    
+            .profile-img {
+                width: 100%;
+                height: auto;
+            }
+    
+            .col-lg-6 {
+                text-align: center;
+            }
+    
+            /* Adjust spacing for small screens */
+            .d-flex {
+                flex-direction: column !important;
+            }
+        }
+    </style>
+    
+    <!-- JavaScript to enable the typed-text effect -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const typedTextElement = document.querySelector('.typed-text-output');
+            const typedText = document.querySelector('.typed-text').textContent;
+            let index = 0;
+    
+            function typeText() {
+                if (index < typedText.length) {
+                    typedTextElement.textContent += typedText.charAt(index);
+                    index++;
+                    setTimeout(typeText, 100);
+                }
+            }
+    
+            typeText();
+        });
+    </script>
+    
+    <!-- Header End -->
 
 
     <!-- About Start -->
     <div class="container-xxl py-6" id="about">
         <div class="container">
             <div class="row g-5">
+                <!-- Left Column: About Text and Details -->
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="d-flex align-items-center mb-5">
                         <div class="years flex-shrink-0 text-center me-4">
-                            <h1 class="display-1 mb-0">1.5</h1>
+                            <h1 class="display-1 mb-0 text-primary">1.5</h1>
                             <h5 class="mb-0">Years</h5>
                         </div>
-                        <h3 class="lh-base mb-0">of working experience as a App Designer & developer using AI</h3>
+                        <h3 class="lh-base mb-0 text-dark">of working experience as an App Designer & Developer using AI</h3>
                     </div>
-                    <p class="mb-4">Unlocking Tomorrow's Potential Today! With 1.5 years of expertise in AI-driven app and web development, I bring innovation to life. Excel in Excel too? Let's turn data into insights together!
-                    </p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Afordable Prices</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>High Quality Service</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>On Time Project Delivery</p>
-                    <a class="btn btn-primary py-3 px-5 mt-3" 
-                    href="https://wa.me/+918320097437?text=Hello%2C%20I%20saw%20your%20website%20and%20want%20to%20connect%20with%20you">
-                    Hire Me
-                 </a>
+                    <p class="mb-4">Unlocking Tomorrow's Potential Today! With 1.5 years of expertise in AI-driven app and web development, I bring innovation to life. Excel in Excel too? Let's turn data into insights together!</p>
+                    <ul class="mb-4">
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="far fa-check-circle text-primary me-3"></i><span>Afordable Prices</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="far fa-check-circle text-primary me-3"></i><span>High Quality Service</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="far fa-check-circle text-primary me-3"></i><span>On Time Project Delivery</span>
+                        </li>
+                    </ul>
+                    <a class="btn btn-primary py-3 px-5 mt-3 w-100 w-sm-auto" href="https://wa.me/+918320097437?text=Hello%2C%20I%20saw%20your%20website%20and%20want%20to%20connect%20with%20you">Hire Me</a>
                 </div>
+    
+                <!-- Right Column: Images and Stats -->
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="row g-3 mb-4">
                         <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="img/about-1.jpg" alt="">
+                            <img class="img-fluid rounded shadow-lg hover-zoom" src="img/about-1.jpg" alt="About Image 1">
                         </div>
                         <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="img/about-2.jpg" alt="">
+                            <img class="img-fluid rounded shadow-lg hover-zoom" src="img/about-2.jpg" alt="About Image 2">
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-3">
                         <h5 class="border-end pe-3 me-3 mb-0">Happy Clients</h5>
                         <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">17</h2>
                     </div>
-                    <p class="mb-4">Our clients applaud our tailored mobile apps and AI solutions for their intuitive design, impactful functionality, and transformative impact on business operations</p>
+                    <p class="mb-4">Our clients applaud our tailored mobile apps and AI solutions for their intuitive design, impactful functionality, and transformative impact on business operations.</p>
                     <div class="d-flex align-items-center mb-3">
                         <h5 class="border-end pe-3 me-3 mb-0">Projects Completed</h5>
                         <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">28</h2>
                     </div>
-                    <p class="mb-0">I have deliver efficient mobile apps, AI solutions, custom software, and excel in data-driven insights across diverse industries. Our expertise ensures tailored solutions that optimize performance and exceed client expectations.</p>
+                    <p class="mb-0">I have delivered efficient mobile apps, AI solutions, custom software, and excel in data-driven insights across diverse industries. Our expertise ensures tailored solutions that optimize performance and exceed client expectations.</p>
                 </div>
             </div>
         </div>
     </div>
+    
+    <!-- CSS Styles -->
+    <style>
+        /* Responsive Design Tweaks */
+        @media (max-width: 767px) {
+            .years h1 {
+                font-size: 3rem;
+            }
+    
+            .years h5 {
+                font-size: 1.2rem;
+            }
+    
+            .display-1 {
+                font-size: 2.5rem;
+            }
+    
+            .lh-base {
+                font-size: 1.3rem;
+            }
+    
+            .btn-primary {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+    
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+            }
+    
+            .d-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .mb-5 {
+                margin-bottom: 2rem;
+            }
+    
+            .w-100 {
+                width: 100% !important;
+            }
+        }
+    
+        /* Image Hover Zoom Effect */
+        .hover-zoom {
+            transition: transform 0.3s ease-in-out;
+        }
+        .hover-zoom:hover {
+            transform: scale(1.05);
+        }
+    
+        /* Add subtle shadow to images */
+        .img-fluid.rounded.shadow-lg {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Styled List */
+        ul.mb-4 {
+            list-style-type: none;
+            padding-left: 0;
+        }
+    
+        ul.mb-4 li {
+            font-size: 1.1rem;
+        }
+    
+        ul.mb-4 li i {
+            font-size: 1.2rem;
+        }
+    
+        /* Text Styles */
+        .text-dark {
+            color: #343a40;
+        }
+    
+        .text-primary {
+            color: #010203;
+        }
+    </style>
+    
+    <!-- JavaScript for Counter-up Plugin -->
+    <script>
+        // Counter-up functionality (requires counter-up.js)
+        $('[data-toggle="counter-up"]').counterUp({
+            delay: 10,
+            time: 1000
+        });
+    </script>
+    
     <!-- About End -->
 
 
     <!-- Expertise Start -->
-    <div class="container-xxl py-6 pb-5" id="skill">
+   
+    <div class="container-xxl py-6" id="skill">
         <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-5 mb-5">Skills & Experience</h1>
-                    <p class="mb-4">I am specialize in mobile app development, AI integration, custom software solutions, and data-driven insights, leveraging advanced technologies to optimize business processes and deliver measurable results.</p>
-                    <h3 class="mb-4">My Skills</h3>
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Python</h6>
-                                    <h6 class="font-weight-bold">70%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">C++</h6>
-                                    <h6 class="font-weight-bold">40%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Excel</h6>
-                                    <h6 class="font-weight-bold">76%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 mb-5">Skills & Experience</h1>
+                    <p class="lead mb-4">I specialize in creating innovative mobile apps, AI-driven solutions, and optimized business tools. My goal is to enhance user experience and deliver impactful results through cutting-edge technologies.</p>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Skills Section -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card skill-card p-4 shadow-lg">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="font-weight-bold">Python</h5>
+                            <span class="badge bg-primary">70%</span>
                         </div>
-                        <div class="col-md-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">HTML</h6>
-                                    <h6 class="font-weight-bold">90%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p>Intermediate-level skills in Python programming:</p>
+                        <ul>
+                            <li>Data analysis and scripting</li>
+                            <li>Basic web scraping and automation</li>
+                            <li>Proficient in libraries like Pandas and NumPy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card skill-card p-4 shadow-lg">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="font-weight-bold">Flutter & Dart</h5>
+                            <span class="badge bg-success">76%</span>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 76%;" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p>Proficient in building responsive mobile apps:</p>
+                        <ul>
+                            <li>API integration and state management</li>
+                            <li>UI/UX design and animations</li>
+                            <li>Building cross-platform applications</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card skill-card p-4 shadow-lg">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="font-weight-bold">Excel</h5>
+                            <span class="badge bg-danger">76%</span>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 76%;" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p>Advanced Excel skills with AI tools:</p>
+                        <ul>
+                            <li>Data cleaning and analysis</li>
+                            <li>Automation using AI-based Excel plugins</li>
+                            <li>Generating insights with formulas and PivotTables</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Skills Section -->
+    
+            <!-- Experience & Education Section -->
+            <div class="col-lg-12 mt-5">
+                <ul class="nav nav-pills justify-content-center mb-5">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="pill" href="#tab-1">Experience</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" href="#tab-2">Education</button>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <!-- Experience Tab -->
+                    <div id="tab-1" class="tab-pane fade show active">
+                        <div class="row gy-4">
+                            <div class="col-sm-6">
+                                <div class="card shadow-sm p-4">
+                                    <h5>UI Designer</h5>
+                                    <p class="text-primary mb-1">Freelancing | 2022 - 2024</p>
+                                    <p>A creative UI designer crafting intuitive, user-centric designs that enhance usability.</p>
                                 </div>
                             </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Flutter & Dart</h6>
-                                    <h6 class="font-weight-bold">76%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="col-sm-6">
+                                <div class="card shadow-sm p-4">
+                                    <h5>App Developer</h5>
+                                    <p class="text-primary mb-1">Freelancing | 2022 - 2024</p>
+                                    <p>Developing mobile apps using Flutter and Dart, delivering seamless and responsive experiences.</p>
                                 </div>
                             </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Wordpress</h6>
-                                    <h6 class="font-weight-bold">85%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="col-sm-6">
+                                <div class="card shadow-sm p-4">
+                                    <h5>Web Designer</h5>
+                                    <p class="text-primary mb-1">Freelancing | 2021 - 2024</p>
+                                    <p>Designing modern websites with responsive layouts, focused on performance and aesthetics.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
-                        <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Experience</button>
-                        </li>
-                        <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">Education</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab-1" class="tab-pane fade show p-0 active">
-                            <div class="row gy-5 gx-4">
-                                <div class="col-sm-6">
-                                    <h5>UI Designer</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2022 - 2024</p>
-                                    <h6 class="mb-0">Freelancing</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>App Development</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2022 - 2024</p>
-                                    <h6 class="mb-0">Freelancing</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Web Designer</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2021 - 2024</p>
-                                    <h6 class="mb-0">Freelancing</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Excel</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2023 - 2024</p>
-                                    <h6 class="mb-0">Freelancing</h6>
+                    <!-- Education Tab -->
+                    <div id="tab-2" class="tab-pane fade show">
+                        <div class="row gy-4">
+                            <div class="col-sm-6">
+                                <div class="card shadow-sm p-4">
+                                    <h5>Std: 10th</h5>
+                                    <p class="text-primary mb-1">MARCH - 2018</p>
+                                    <p>Percentile Rank: 85.3%</p>
                                 </div>
                             </div>
-                        </div>
-                        <div id="tab-2" class="tab-pane fade show p-0">
-                            <div class="row gy-5 gx-4">
-                                <div class="col-sm-6">
-                                    <h5>Std: 10th</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">MARCH - 2018</p>
-                                    <h6 class="mb-0">Percentile Rank: 85.3%</h6>
-                                </div>
-                                <div class="col-sm-6">
+                            <div class="col-sm-6">
+                                <div class="card shadow-sm p-4">
                                     <h5>Std: 12th</h5>
-                                    <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">MARCH - 2020</p>
-                                    <h6 class="mb-0">Percentile Rank: 81.32%</h6>
+                                    <p>Percentile Rank: 81.32%</p>
                                 </div>
-                                <div class="col-sm-6">
-                                    <h5>Computer Operator and Programming Assistant</h5>
-                                    <hr class="text-primary my-2">
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card shadow-sm p-4">
+                                    <h5>Computer Operator & Programming Assistant</h5>
                                     <p class="text-primary mb-1">2023 - 2024</p>
-                                    <h6 class="mb-0">N/A</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Android Development Course</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2022 - 2024</p>
-                                    <h6 class="mb-0">YouTube & Paid Course</h6>
+                                    <p>Completion in progress.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- End of Experience & Education Section -->
         </div>
     </div>
+    
+    <style>
+    /* Hover effect for skill cards */
+    .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Tab content cards */
+    .card {
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    </style>
+    
+
+
+
+    
     <!-- Expertise End -->
 
 
     <!-- Service Start -->
     <div class="container-fluid bg-light my-5 py-6" id="service">
         <div class="container">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <!-- Section Header -->
+            <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">My Services</h1>
+                    <h1 class="display-5 fw-bold text-gradient">My Services</h1>
+                    <p class="text-secondary" style="border-radius: 20px; border-color: #343a40; background-color: #5c0b9e; padding: 6px;">Offering innovative solutions tailored to your needs with precision, creativity, and expertise.</p>
                 </div>
                 <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5 mt-3" 
+                    <a class="btn btn-primary btn-gradient shadow py-3 px-5 mt-3" 
                     href="https://wa.me/+918320097437?text=Hello%2C%20I%20saw%20your%20website%20and%20want%20to%20connect%20with%20you">
                     Hire Me
                  </a>
                 </div>
             </div>
+            
+            <!-- Services Section -->
             <div class="row g-4">
+                <!-- Service Item -->
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-crop-alt fa-2x text-dark"></i>
+                    <div class="service-item bg-gradient-light rounded shadow-lg h-100 p-4 p-lg-5 position-relative">
+                        <div class="icon-container">
+                            <i class="fa fa-crop-alt fa-3x text-primary"></i>
                         </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Application Pages Design</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">₹599</span></h6>
-                            <span>Revamp your app's appeal with our expert page design service at just ₹599 per page. We blend creativity with functionality to enhance user experience and showcase your brand's identity effectively.</span>
+                        <div class="service-content ms-lg-4">
+                            <h4 class="fw-bold text-dark mb-3">Application Pages Design</h4>
+                            <h6 class="text-secondary">Starts from <span class="text-primary fw-bold">₹599</span></h6>
+                            <p>Transform your app’s design with captivating, user-friendly pages to enhance user engagement.</p>
                         </div>
                     </div>
                 </div>
+    
+                <!-- Service Item -->
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code-branch fa-2x text-dark"></i>
+                    <div class="service-item bg-gradient-light rounded shadow-lg h-100 p-4 p-lg-5 position-relative">
+                        <div class="icon-container">
+                            <i class="fa fa-code-branch fa-3x text-success"></i>
                         </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Excel</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">₹1299</span></h6>
-                            <span>Enhance your data management with our Excel expertise at an affordable rate. We offer comprehensive solutions tailored to optimize efficiency and showcase your data effectively.</span>
+                        <div class="service-content ms-lg-4">
+                            <h4 class="fw-bold text-dark mb-3">Excel Solutions</h4>
+                            <h6 class="text-secondary">Starts from <span class="text-success fw-bold">₹1299</span></h6>
+                            <p>Streamline your workflow with customized Excel solutions that bring efficiency and clarity.</p>
                         </div>
                     </div>
                 </div>
+    
+                <!-- Service Item -->
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code fa-2x text-dark"></i>
+                    <div class="service-item bg-gradient-light rounded shadow-lg h-100 p-4 p-lg-5 position-relative">
+                        <div class="icon-container">
+                            <i class="fa fa-code fa-3x text-warning"></i>
                         </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Web Design</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">₹5999</span></h6>
-                            <span>Crafting visually compelling websites that elevate your brand. Tailored designs that enhance usability and maximize online presence.</span>
+                        <div class="service-content ms-lg-4">
+                            <h4 class="fw-bold text-dark mb-3">Web Design</h4>
+                            <h6 class="text-secondary">Starts from <span class="text-warning fw-bold">₹5999</span></h6>
+                            <p>Build modern, responsive websites designed to maximize user experience and online presence.</p>
                         </div>
                     </div>
                 </div>
+    
+                <!-- Service Item -->
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-laptop-code fa-2x text-dark"></i>
+                    <div class="service-item bg-gradient-light rounded shadow-lg h-100 p-4 p-lg-5 position-relative">
+                        <div class="icon-container">
+                            <i class="fa fa-laptop-code fa-3x text-danger"></i>
                         </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">UI/UX Design</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">₹5999</span></h6>
-                            <span>Creating intuitive and visually engaging interfaces that enhance user experience. Our designs are crafted to optimize usability and captivate your audience.</span>
+                        <div class="service-content ms-lg-4">
+                            <h4 class="fw-bold text-dark mb-3">UI/UX Design</h4>
+                            <h6 class="text-secondary">Starts from <span class="text-danger fw-bold">₹5999</span></h6>
+                            <p>Create interactive and user-centric designs that captivate audiences and drive engagement.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <!-- Custom Styling -->
+    <style>
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(45deg, #000000, #db6409);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    
+        /* Button Gradient */
+        .btn-gradient {
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+    
+        .btn-gradient:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    
+        /* Service Item Hover */
+        .service-item {
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+        }
+    
+        .service-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(145deg, #f9f9f9, #e6e6e6);
+        }
+    
+        /* Icon Container */
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(145deg, #f0f0f0, #ffffff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.1), inset -5px -5px 15px rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+    
+        .icon-container i {
+            background: -webkit-linear-gradient(#5509a5, #144292);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    
+        /* Typography Enhancements */
+        h4 {
+            font-size: 1.5rem;
+        }
+    
+        h6 {
+            font-size: 1.1rem;
+            color: #555;
+        }
+    
+        p {
+            font-size: 1rem;
+            color: #666;
+        }
+    </style>
+    
     <!-- Service End -->
 
 
@@ -679,13 +978,7 @@
                     <p class="mb-2">Mail me:</p>
                     <h3 class="fw-bold">ahir385350@gmail.com</h3>
                     <hr class="w-100">
-                    <p class="mb-2">Follow me:</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-primary me-2" href="https://www.instagram.com/memes_guy_/"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://github.com/AYAR57/Whatsapp-Status-Saver.git"><i class="fab fa-github"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://youtube.com/@ahirethics?si=a1ucTM1q41TFlRRn"><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.linkedin.com/in/ayar-suresh-a62a1a25b/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    
                 </div>
                 <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <p class="mb-4">We apologize for the inconvenience, but please note that the contact form is currently inactive. I am in the process of updating and improving my website to provide you with a better experience. In the meantime, if you have any inquiries or need assistance, please feel free to reach out to us directly at ahir385350@gmail.com, We appreciate your understanding and look forward to assisting you.</a>.</p>
